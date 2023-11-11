@@ -62,14 +62,17 @@ function Form(props) {
       <button type="submit">Submit</button>
     </form>
 
-    {/* Display an error message */}
+    {/* Display an error message. Ternary expression  */}
+    {/* checks whether the "errors" array has elements or its empty.If errors are present, it executes the code below otehrwise it renders teh "null" */}
     {errors.length > 0 ?
+    // Iterate through each errors in errors array and for each it creates <p>{erros}</p>
       errors.map((error, index) => (
+        // key={index} assigns a unique identifier
         <p key={index} style={{ color: "red" }}> {error} </p>
       )) : 
       null
     }
-
+    
     <h3>Submissions</h3>
     {listofSubmissions}
     </div>
